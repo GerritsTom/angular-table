@@ -6,25 +6,25 @@
           <th>ID</th>
           <th>First name</th>
           <th>Last name</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Foo</td>
-          <td>Bar</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>SomeOne</td>
-          <td>YouKnow</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>IAmount</td>
-          <td>Ofinspiration</td>
+        <tr *ngFor="let person of persons">
+          <td>{{ person.id }}</td>
+          <td>{{ person.firstName }}</td>
+          <td>{{ person.lastName }}</td>
+          <td style="text-align: right"><button class="btn btn-outline-dark" (click)="onTippEdit(person)">Tipp ändern</button></td>
         </tr>
       </tbody>
+      <!--
+      <tfoot>
+        <tr>
+          <th><input type="text" placeholder="Search ID" name="search-id"/></th>
+          <th><input type="text" placeholder="Search first name" name="search-first-name"/></th>
+          <th><input type="text" placeholder="Search last name" name="search-last-name"/></th>
+        </tr>
+      </tfoot> -->
     </table>
   </div>
 
